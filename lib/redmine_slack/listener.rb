@@ -98,21 +98,26 @@ private
 	end
 
 	def channel_for_project(proj)
-		return nil if proj.blank?
+		# We are using project identifier as a channel name instead
+		# of a Custom Value that must be set for every issue.
+		return "#" + "#{escape proji.identifier}"
+		
+		# original channel_for_project code:
+		#return nil if proj.blank?
 
-		cf = ProjectCustomField.find_by_name("Slack Channel")
+		#cf = ProjectCustomField.find_by_name("Slack Channel")
 
-		val = [
-			(proj.custom_value_for(cf).value rescue nil),
-			(channel_for_project proj.parent),
-			Setting.plugin_redmine_slack[:channel],
-		].find{|v| v.present?}
+		#val = [
+		#	(proj.custom_value_for(cf).value rescue nil),
+		#	(channel_for_project proj.parent),
+		#	Setting.plugin_redmine_slack[:channel],
+		#].find{|v| v.present?}
 
-		if val.to_s.starts_with? '#'
-			val
-		else
-			nil
-		end
+		#if val.to_s.starts_with? '#'
+		#	val
+		#else
+		#	nil
+		#end
 	end
 
 	def detail_to_field(detail)
