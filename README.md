@@ -6,7 +6,7 @@ setted on every issue).
 
 To install this modified version please do:
 
-    git clone https://github.com/sciyoshi/redmine-slack.git redmine_slack
+    git clone https://github.com/lpenap/redmine-slack.git redmine_slack
     bundle install
 
 # Slack chat plugin for Redmine
