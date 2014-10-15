@@ -1,3 +1,14 @@
+# Modified README.md
+
+This is a modified version of redmine-slack where the project identifier
+is used as the channel name (instead of using a Custom Value wich have to be
+setted on every issue).
+
+To install this modified version please do:
+
+    git clone https://github.com/sciyoshi/redmine-slack.git redmine_slack
+    bundle install
+
 # Slack chat plugin for Redmine
 
 This plugin posts updates to issues in your Redmine installation to a Slack
