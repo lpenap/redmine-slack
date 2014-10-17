@@ -100,7 +100,7 @@ private
 	def channel_for_project(proj)
 		# We are using project identifier as a channel name instead
 		# of a Custom Value that must be set for every issue.
-		return "#" + "#{escape proji.identifier}"
+		return "#" + "#{escape proj.identifier}"
 		
 		# original channel_for_project code:
 		#return nil if proj.blank?
